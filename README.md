@@ -11,8 +11,8 @@
     - ログイン・ログアウト機能
    
 1. 開発フロー（機能追加順）
-　　　　　　　　 - ①大学情報(特徴と評価)の閲覧機能まで作成(Webのみ)
-　　　　　　　　　　- ②ログイン・口コミ・評価機能作成(Webとスマホ)
+    - ①大学情報(特徴と評価)の閲覧機能まで作成(Webのみ)
+    - ②ログイン・口コミ・評価機能作成(Webとスマホ)
 
 ## 使用技術
 
@@ -35,6 +35,5 @@
 
 
 ## 構成図
-<img width="823" alt="スクリーンショット 2022-01-15 21 00 50" src="https://user-images.githubusercontent.com/56777467/149621039-354c8f57-75d3-43a7-947b-6f698fbcb652.png">
+![Untitled Diagram](https://user-images.githubusercontent.com/56777467/164374622-6e9a6518-24b2-4f01-8f92-ea53d264dad8.jpg)
 
-    
