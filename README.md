@@ -1,0 +1,1 @@
+# aichi-university-app
