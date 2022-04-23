@@ -1,7 +1,8 @@
 <template>
   <v-app>
+    <Loading v-show="loading"></Loading>
     <Header />
-    <v-main>
+    <v-main v-show="!loading">
       <router-view />
     </v-main>
     <Footer />
@@ -12,6 +13,7 @@
 import Vue from "vue";
 import Header from "@/global/Header.vue";
 import Footer from "@/global/Footer.vue";
+import Loading from "@/components/Loading.vue";
 
 export default Vue.extend({
   name: "App",
@@ -19,8 +21,18 @@ export default Vue.extend({
   components: {
     Header,
     Footer,
+    Loading,
   },
 
-  data: () => ({}),
+  data() {
+    return {
+      loading: true,
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.loading = false;
+    }, 1000);
+  },
 });
 </script>

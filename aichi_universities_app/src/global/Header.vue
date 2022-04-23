@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-app-bar app color="light-blue" elevation="5" dark>
-      <v-container>
+      <v-container @click="getHome()" style="cursor: pointer">
         <v-row>
           <v-col>愛知の大学図鑑</v-col>
         </v-row>
@@ -12,7 +12,14 @@
 <script>
 export default {
   name: "Header",
-  methods: {},
+
+  methods: {
+    getHome() {
+      this.$router.push({
+        name: "Universities",
+      });
+    },
+  },
 };
 </script>
 <style>
