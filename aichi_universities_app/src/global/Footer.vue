@@ -1,14 +1,26 @@
 <template>
-  <v-footer app color="light-blue" elevation="5" dark>
-    <v-container>
-      <v-row>
-        <v-col>愛知の大学図鑑</v-col>
-      </v-row>
-    </v-container>
-  </v-footer>
+  <v-bottom-navigation app hide-on-scroll>
+    <v-btn v-for="menu in menus" :key="menu.title" :to="menu.url">
+      <span>{{ menu.title }}</span>
+      <v-icon>{{ menu.icon }}</v-icon>
+    </v-btn>
+  </v-bottom-navigation>
 </template>
 <script>
-export default {};
+import Vue from "vue";
+
+export default Vue.extend({
+  name: "Footer",
+  data: () => ({
+    menus: [
+      { title: "偏差値", icon: "mdi-web", url: "/" },
+      { title: "学部", icon: "mdi-home", url: "/home" },
+      { title: "カテゴリ", icon: "mdi-heart", url: "/favorites" },
+      { title: "公務員", icon: "mdi-information-variant", url: "/about" },
+      { title: "資格", icon: "mdi-information-variant", url: "/about" },
+    ],
+  }),
+});
 </script>
 <style>
 </style>

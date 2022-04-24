@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar app color="light-blue" elevation="5" dark>
+    <v-app-bar app color="light-blue" elevation="5" clippedLeft dark>
       <v-container @click="getHome()" style="cursor: pointer">
         <v-row>
           <v-col>愛知の大学図鑑</v-col>
