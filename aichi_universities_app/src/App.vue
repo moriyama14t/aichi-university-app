@@ -2,6 +2,7 @@
   <v-app>
     <Loading v-show="loading"></Loading>
     <Header />
+    <SideBar />
     <v-main v-show="!loading">
       <router-view />
     </v-main>
@@ -13,6 +14,7 @@
 import Vue from "vue";
 import Header from "@/global/Header.vue";
 import Footer from "@/global/Footer.vue";
+import SideBar from "@/global/SideBar.vue";
 import Loading from "@/components/Loading.vue";
 
 export default Vue.extend({
@@ -21,6 +23,7 @@ export default Vue.extend({
   components: {
     Header,
     Footer,
+    SideBar,
     Loading,
   },
 
