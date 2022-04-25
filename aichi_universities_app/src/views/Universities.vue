@@ -57,13 +57,13 @@
 <script lang="ts">
 import Vue from "vue";
 import axios from "axios";
+import { UniversityModel } from "@/models/UniversityModel";
 
 export default Vue.extend({
   name: "Universities",
 
   data: () => ({
-    universities: [],
-    satisfaction: 5,
+    universities: [] as UniversityModel[],
   }),
 
   async mounted() {

@@ -38,12 +38,13 @@
 <script lang="ts">
 import Vue from "vue";
 import axios from "axios";
+import { UniversityModel } from "@/models/UniversityModel";
 
 export default Vue.extend({
   name: "UniversityDetail",
 
   data: () => ({
-    university: {},
+    university: {} as UniversityModel,
   }),
 
   async mounted() {
@@ -55,7 +56,8 @@ export default Vue.extend({
         },
       }
     );
-    this.university = await response.data;
+    const university: UniversityModel = await response.data;
+    this.university = university;
   },
 });
 </script>
