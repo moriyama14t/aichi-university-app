@@ -10,10 +10,6 @@ module.exports = {
   //プラグイン導入
   extends: ['plugin:vue/recommended', 'eslint:recommended', '@vue/typescript'], //typescriptも必要なら '@vue/typescript' を追記
 
-  // typescriptを読み込む
-  // parserOptions: {
-  //   parser: '@typescript-eslint/parser',
-  // },
 
   rules: {
     //自動修正されないものは error にしている

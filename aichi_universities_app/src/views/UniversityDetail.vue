@@ -37,18 +37,18 @@
 
 <script lang="ts">
 import Vue from "vue";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import { UniversityModel } from "@/models/UniversityModel";
 
 export default Vue.extend({
   name: "UniversityDetail",
 
   data: () => ({
-    university: {} as UniversityModel,
+    university: {},
   }),
 
   async mounted() {
-    const response = await axios.get(
+    const response: AxiosResponse<UniversityModel> = await axios.get(
       `https://aichi.microcms.io/api/v1/university_info/${this.$route.params.id}`,
       {
         headers: {
