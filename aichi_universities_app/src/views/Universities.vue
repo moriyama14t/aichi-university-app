@@ -56,18 +56,19 @@
 
 <script lang="ts">
 import Vue from "vue";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
+import { UniversityModel } from "@/models/UniversityModel";
+import { MicroCmsModel } from "@/models/MicroCmsModel";
 
 export default Vue.extend({
   name: "Universities",
 
   data: () => ({
-    universities: [],
-    satisfaction: 5,
+    universities: [] as UniversityModel[],
   }),
 
   async mounted() {
-    const response = await axios.get(
+    const response: AxiosResponse<MicroCmsModel> = await axios.get(
       "https://aichi.microcms.io/api/v1/university_info",
       {
         headers: {
@@ -75,12 +76,14 @@ export default Vue.extend({
         },
       }
     );
-    this.universities = await response.data.contents;
+    const universities: UniversityModel[] = await response.data.contents;
+    this.universities = universities;
   },
   methods: {
-    goUniversityDetail(id: string) {
+    goUniversityDetail(id: string): void {
       this.$router.push({
         name: "UniversityDetail",
+
         params: {
           id: id,
         },
