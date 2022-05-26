@@ -16,7 +16,7 @@ export default {
   methods: {
     getHome() {
       this.$router.push({
-        name: "Universities",
+        name: "Top",
       });
     },
   },

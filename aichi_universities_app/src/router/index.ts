@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Universities from "../views/Universities.vue";
 import UniversityDetail from "@/views/UniversityDetail.vue";
+import Top from "@/views/Top.vue";
 
 Vue.use(VueRouter);
 
@@ -16,8 +17,11 @@ const routes: Array<RouteConfig> = [
     name: "UniversityDetail",
     component: UniversityDetail,
   },
-
-
+    {
+    path: "/top",
+    name: "Top",
+    component: Top,
+  }
 ];
 
 const router = new VueRouter({

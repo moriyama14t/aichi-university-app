@@ -2,25 +2,20 @@
   <div>
     <v-row>
       <v-col cols="12">
-        <v-img :src="university.image.url"></v-img>
+        <v-img :src="university.image.url" />
       </v-col>
     </v-row>
     <v-card>
       <v-row>
         <v-col cols="12">
-          <v-card-title
-            >{{ university.furikana }}ダイガク<br />{{
-              university.name
-            }}大学</v-card-title
-          >
+          <v-card-title>
+            {{ university.furikana }}ダイガク<br>{{ university.name }}大学
+          </v-card-title>
           {{ university.feature_comment }}
-          <v-spacer></v-spacer>
+          <v-spacer />
           <v-card-actions>
             <v-btn
-              :to="{
-                name: 'UniversityDetail',
-                params: { id: university.id },
-              }"
+              :to="{name: 'UniversityDetail',params: { id: university.id },}"
               color="indigo"
               fab
               small
@@ -34,7 +29,6 @@
     </v-card>
   </div>
 </template>
-
 <script lang="ts">
 import Vue from "vue";
 import axios from "axios";

@@ -1,7 +1,11 @@
 <template>
   <div>
     <v-row class="ma-5 pa-5">
-      <v-col cols="12" v-for="university in universities" :key="university.id">
+      <v-col
+        v-for="university in universities"
+        :key="university.id"
+        cols="12"
+      >
         <v-card @click="goUniversityDetail(university.id)">
           <v-container>
             <v-row>
@@ -13,21 +17,35 @@
                 xs="12"
                 class="d-flex align-center"
               >
-                <v-img :src="university.image.url"></v-img>
+                <v-img :src="university.image.url" />
               </v-col>
-              <v-col xl="8" lg="8" md="8" sm="12" xs="12">
+              <v-col
+                xl="8"
+                lg="8"
+                md="8"
+                sm="12"
+                xs="12"
+              >
                 <v-card-title>
                   <p>{{ university.name }}大学</p>
-                  <p class="text-caption">{{ university.furikana }}ダイガク</p>
+                  <p class="text-caption">
+                    {{ university.furikana }}ダイガク
+                  </p>
                 </v-card-title>
                 <v-chip
-                  class="white--text"
                   v-if="university.is_public"
+                  class="white--text"
                   color="green"
                 >
-                  公立</v-chip
+                  公立
+                </v-chip>
+                <v-chip
+                  v-else
+                  class="white--text"
+                  color="blue"
                 >
-                <v-chip class="white--text" v-else color="blue">私立</v-chip>
+                  私立
+                </v-chip>
                 <v-card-text>
                   <p>
                     {{
@@ -39,11 +57,13 @@
                   </p>
                 </v-card-text>
                 <div
-                  style="display: inline"
                   v-for="feature_tag in university.feature_tags"
                   :key="feature_tag"
+                  style="display: inline"
                 >
-                  <v-chip color="yellow">{{ feature_tag.name }}</v-chip>
+                  <v-chip color="yellow">
+                    {{ feature_tag.name }}
+                  </v-chip>
                 </div>
               </v-col>
             </v-row>
@@ -82,7 +102,7 @@ export default Vue.extend({
       this.$router.push({
         name: "UniversityDetail",
         params: {
-          id: id,
+          id,
         },
       });
     },
